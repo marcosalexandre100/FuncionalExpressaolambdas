@@ -3,6 +3,7 @@ package Predicate;
 import javax.imageio.stream.ImageInputStreamImpl;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Aplication {
     public static void main(String[] args) {
@@ -13,8 +14,8 @@ public class Aplication {
         list.add(new Product("Tablet", 350.50));
         list.add(new Product("HD Case", 80.90));
 
-        list.removeIf(Product::nonStaticProductPrecidate);
-        //criou um metodo não static no product e faço uma referencia
+        Predicate<Product> pred = p ->p.getPrice() >=100;
+        list.removeIf(pred);
 
         for(Product p: list){
             System.out.println(p);
