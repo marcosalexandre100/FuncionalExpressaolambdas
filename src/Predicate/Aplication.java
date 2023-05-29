@@ -13,8 +13,8 @@ public class Aplication {
         list.add(new Product("Tablet", 350.50));
         list.add(new Product("HD Case", 80.90));
 
-        list.removeIf(Product::staticProductPredicate);
-        //criou um metodo static no product e faço uma referencia
+        list.removeIf(Product::nonStaticProductPrecidate);
+        //criou um metodo não static no product e faço uma referencia
 
         for(Product p: list){
             System.out.println(p);
